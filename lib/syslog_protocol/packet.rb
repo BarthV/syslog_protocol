@@ -111,7 +111,7 @@ module SyslogProtocol
 
     def generate_timestamp
       time = @time || Time.now
-      time.strftime("%Y-%m-%dT%k:%M:%S.%6N%z")
+      time.strftime("%Y-%m-%dT%k:%M:%S.%6N%:z")
     end
 
     if "".respond_to?(:bytesize)
