@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   ## Leave these as is they will be modified for you by the rake gemspec task.
   ## If your rubyforge_project name is different, then edit it and comment out
   ## the sub! line in the Rakefile
-  s.name              = 'syslog_protocol'
-  s.version           = '0.9.2'
+  s.name              = 'syslog_protocol_barthv'
+  s.version           = '0.9.2dev1'
   s.date              = "2009-08-01"
   # s.rubyforge_project = 'syslog_protocol'
 
@@ -25,9 +25,9 @@ Gem::Specification.new do |s|
   ## List the primary authors. If there are a bunch of authors, it's probably
   ## better to set the email to an email list or something. If you don't have
   ## a custom homepage, consider using your GitHub URL or the like.
-  s.authors = ["Jake Douglas", 'Eric Lindvall']
-  s.email = [ "jakecdouglas@gmail.com", 'eric@5stops.com' ]
-  s.homepage = 'https://github.com/eric/syslog_protocol'
+  s.authors = ["Jake Douglas", 'Eric Lindvall', 'Barthelemy Vessemont']
+  s.email = [ "jakecdouglas@gmail.com", 'eric@5stops.com', 'b.vessemont@gmail.com']
+  s.homepage = 'https://github.com/BarthV/syslog_protocol'
 
   ## This gets added to the $LOAD_PATH so that 'lib/NAME.rb' can be required as
   ## require 'NAME.rb' or'/lib/NAME/file.rb' can be as require 'NAME/file.rb'

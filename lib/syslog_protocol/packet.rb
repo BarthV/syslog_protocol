@@ -11,7 +11,7 @@ module SyslogProtocol
       unless @hostname and @facility and @severity and @tag
         raise "Could not assemble packet without hostname, tag, facility, and severity"
       end
-      data = "<#{pri}>#{generate_timestamp} #{@hostname} #{@tag}: #{@content}"
+      data = "<#{pri}>1 #{generate_timestamp} #{@hostname} #{@tag} - - - #{@content}"
 
       if string_bytesize(data) > max_size
         data = data.slice(0, max_size)
@@ -111,11 +111,7 @@ module SyslogProtocol
 
     def generate_timestamp
       time = @time || Time.now
-      # The timestamp format requires that a day with fewer than 2 digits have
-      # what would normally be a preceding zero, be instead an extra space.
-      day = time.strftime("%d")
-      day = day.sub(/^0/, ' ') if day =~ /^0\d/
-      time.strftime("%b #{day} %H:%M:%S")
+      time.strftime("%Y-%m-%dT%k:%M:%S.%6N%z")
     end
 
     if "".respond_to?(:bytesize)
